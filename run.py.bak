@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*
+from flask import Flask
+from luyou import *
+import sys
+
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
+
+app=Flask(__name__,static_url_path='')
+app.url_map.converters['re']=RegexConverter
+app.register_blueprint(b_shouye)
+app.jinja_env.auto_reload = True
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=5000)
+# print(url_for('static',filename='css/bootstrap.css'))
+
+

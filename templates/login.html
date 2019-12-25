@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>欢迎来到周瑜的博客</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">周瑜的博客</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/chenzy.jpg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">关于我</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#experience">经历</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">学历</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills">技能</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#interests">兴趣</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#awards">获得奖项</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#message">留言板</a>
+          </li>	
+        </ul>
+      </div>
+    </nav>
+	<div class="p-3 p-lg-5 d-flex flex-column text-center">
+		<h2 style="margin-bottom: 10%">登陆</h2>
+		<form class="form-control" style="padding:70px 0px" name="login_form" id="login_form" method="post" action="/login">
+			<div class="form-group">
+				<label><h4 class="text-primary">用户名：</h4><input name="login_name" type="text" class="form-control" placeholder="请输入用户名"/></label>
+			</div>
+			<span class="errorspan" name="errorloginname" style="color:red;font-size:1rem">{{errormessage}}</span>
+			<div class="form-group">
+				<label><h4 class="text-primary">密码：</h4><input name="login_password" type="password" class="form-control" placeholder="请输入8-16位密码"/>
+			</div>
+			</label><span class="errorspan" name="errorloginpassword" style="color:red;font-size:1rem"></span>
+			<div class="form-group">
+				<input type="button" value="提交" class="btn-light" onclick="loginsubmitForm()" /><a href="/register" style="margin-left: 1rem">还未注册？</a>
+			</div>
+		</form>  
+	</div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+    <script type="text/javascript">
+    	var login_flag=0;
+    	var login_flag1=0;
+    	$(document).ready(function() {
+    		login_name=$('[name="login_name"]');
+    		login_password=$('[name="login_password"]');
+    		login_name.keyup(function(event) {
+    			if (login_name.val().length<5) {
+    				$('span[name="errorloginname"]').text("用户名长度必须大于四个个字符！");
+    				login_flag=0;
+    			}
+    			else
+    			{
+    				$('span[name="errorloginname"]').text("");
+    				login_flag=1;
+    			}
+    		});
+
+    		login_password.keyup(function(event) {
+    			if (login_password.val().length<8||login_password.val().length>16) {
+    				$('span[name="errorloginpassword"]').text("密码长度为8-16位！");
+    				login_flag1=0;
+    			}
+    			else
+    			{
+    				$('span[name="errorloginpassword"]').text("");
+    				login_flag1=1;
+    			}
+    		});
+    		
+    	});
+
+		function loginsubmitForm(){
+			if (login_flag==1&&login_flag1==1) {
+				var form=document.getElementById('login_form');
+				form.submit()
+				// alert("提交成功，跳转中！")
+			}
+			else
+			{
+				alert('登陆有误，请检查！')
+				return
+			}
+		}
+    </script>
+  </body>
+
+</html>
