@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>学习通注册</title>
+<link href="css/b.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="middle">
+  <div class="title">
+    <h1>学习通账号注册</h1>
+  </div>
+  <form action="/register" method="post" name="register">
+    <div>账户：
+      <input type="text" name="username"/>
+      <label class="register_erro"></label>
+    </div>
+    <div> 密码：
+      <input type="text" name="password"/>
+       </div>
+    <div class="formbutton"><input style="margin-left: 10px" type="button" value="注册" onClick="registerClick()"></div>
+  </form>
+</div>
+</body>
+<script src="js/basejs.js" type="text/javascript"></script>
+<script>var register_flag={{register_flag}};if(register_flag==1){var register_lable=document.getElementsByClassName("register_erro");register_lable[0].appendChild(document.createTextNode("该用户已存在！"));}</script>
+</html>

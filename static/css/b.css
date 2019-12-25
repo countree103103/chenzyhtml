@@ -1,0 +1,21 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.middle {
+	position: relative;
+	left: 40%;
+	top: 200px;
+	bottom: 200px;
+}
+
+.formbutton {
+    margin-left: 162px;
+    margin-top: 18px;
+}
+.title {
+    margin-bottom: 23px;
+    margin-left: 49px;
+}

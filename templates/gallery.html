@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block style %}
+<style type="text/css">
+    .in{
+      display:none;
+    }
+  </style>
+{% endblock %}
+{% block main %}
+  <div class="container flash" style="">
+      <div class="row in" style="border-bottom: 3px solid #D8D8D8;padding: 10% 10%">
+      <div class="col-8">
+        <h3>hello this this my first picture!</h3>
+      </div>
+      <div class="col-4">
+        <img class="img-fluid" src="img/profile.jpg" alt="" style="margin-top: 10%;"/> </div>
+    </div>
+    <div class="row in" style="border-bottom: 3px solid #CDCDCD;padding: 10% 10%">
+        <div class="col-4">
+        <img class="img-fluid" src="img/profile.jpg" alt="" style="margin-top: 10%;"/> 
+      </div>
+      <div class="col-8">
+        <h3>hello this this my first picture!</h3>
+      </div>
+    </div>
+    <div class="row in" style="border-bottom: 3px solid #D8D8D8;padding: 10% 10%">
+      <div class="col-8">
+        <h3>你好！这是我的第三张照片！</h3>
+      </div>
+      <div class="col-4">
+        <img class="img-fluid" src="img/profile.jpg" alt="" style="margin-top: 10%;"/> </div>
+    </div>
+    
+  </div>
+{% endblock %}
+{% block script %}
+  <script type="text/javascript">
+    function test(){
+        $(this).next().fadeIn(3000,test);
+      }
+    $(document).ready(function(){
+      $('.in').eq(0).fadeIn(3000,test);
+});
+  </script>
+{% endblock %}
