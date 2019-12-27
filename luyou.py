@@ -8,8 +8,9 @@ import time
 from datetime import timedelta
 import sys
 
-# reload(sys)
-# sys.setdefaultencoding('utf-8')
+if(sys.version_info.major == 2):
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 #db=Mongo(host='localhost',db_name='sk')
 dbsql=Sqlite("./db/db.db")

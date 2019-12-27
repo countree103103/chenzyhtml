@@ -1,8 +1,9 @@
 import sqlite3
 import sys
 
-# reload(sys)
-# sys.setdefaultencoding('utf-8')
+if(sys.version_info.major == 2):
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 class Sqlite():
 

@@ -3,8 +3,9 @@ from flask import Flask
 from luyou import *
 import sys
 
-# reload(sys)
-# sys.setdefaultencoding('utf-8')
+if(sys.version_info.major == 2):
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 app=Flask(__name__,static_url_path='')
 app.url_map.converters['re']=RegexConverter

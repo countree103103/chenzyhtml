@@ -2,8 +2,9 @@
 import pymongo
 import sys
 
-# reload(sys)
-# sys.setdefaultencoding('utf-8')
+if(sys.version_info.major == 2):
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 class Mongo():
     def __init__(self,host,db_name,port=27017):
