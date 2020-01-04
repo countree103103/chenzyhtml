@@ -7,6 +7,7 @@ from sql import *
 import time
 from datetime import timedelta
 import sys
+import os
 
 if(sys.version_info.major == 2):
     reload(sys)
@@ -26,6 +27,7 @@ b_shouye=Blueprint('b_luyou',__name__,url_prefix='/')
 @b_shouye.route('/<re("(index.html){0,1}"):empty>',methods=['GET','POST'])
 def index(empty):
     lyb=dbsql.find_all("lyb") 
+    oynn=os.listdir("./static/img/oynn")
     if request.method=="POST":
         g_name=request.form['guest_name']
         g_message=request.form['guest_message']
@@ -33,7 +35,7 @@ def index(empty):
         dbsql.insert_one("lyb","NULL,'{}','{}','{}'".format(g_name,g_message,g_time))
         return redirect('/')
     else:
-        return render_template('index.html',lyb=lyb)
+        return render_template('index.html',lyb=lyb,oynn=oynn)
 
 # @b_shouye.route('/login',methods=['GET','POST'])
 # def login():
@@ -130,6 +132,10 @@ def logout():
 @b_shouye.route('/gallery',methods=['GET','POST'])
 def gallery():
     return render_template("gallery.html")
+
+@b_shouye.route('/swiper',methods=['GET','POST'])
+def swiper():
+    return render_template("swiper.html")
 
 if __name__=="__main__":
     print(url_for('gallery'))

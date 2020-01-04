@@ -11,8 +11,12 @@ Desktop.ini
 dist
 build
 
+# Vim
+*~
+
 # My configurations:
 db.ini
 deploy_key_rsa
 .idea/
 __pycache__/
+*.db
