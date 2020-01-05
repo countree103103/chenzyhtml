@@ -8,6 +8,18 @@ body {
   padding-top: 54px;
   color: #868e96; }
 
+#music{
+            position: fixed;
+            /* top:70px; */
+            bottom: 10px;
+            right: 4px;
+            z-index: 99;
+            opacity: 0.3;
+            transform:scale(0.8,0.8);
+            -webkit-transform:scale(0.8,0.8);  /*兼容-webkit-引擎浏览器*/
+            -moz-transform:scale(0.8,0.8);     /*兼容-moz-引擎浏览器*/
+          }
+
 @media (min-width: 992px) {
   body {
     padding-top: 0;
@@ -83,7 +95,15 @@ h2 {
         #sideNav .navbar-collapse .navbar-nav .nav-item {
           display: block; }
           #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
-            display: block; } }
+            display: block; } 
+            #music{
+            position: fixed;
+            top:0px;
+            right: 23px;
+            z-index: 99;
+            opacity: 0.3;
+          }
+          }
 
 section.resume-section {
   border-bottom: 1px solid #dee2e6;
