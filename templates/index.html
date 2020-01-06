@@ -197,7 +197,7 @@
       <div class="d-flex flex-column">
         {% for data in lyb %}
           <h5>{{data[1]}}</h5> <time>{{data[3]}}</time>
-          <p>{{data[2]}}</p>
+          <p style="display:inline">{{data[2]}}</p>
         {% endfor %}
       </div>
       <h1>留言</h1><br>
@@ -289,5 +289,25 @@
   easing: 'ease-in-sine',
   delay: 100
 });
+    </script>
+    <script type="text/javascript">
+      function show(){
+        $('#message div:first p[style="display:none"]')
+      }
+
+      $(document).ready(function(){
+        $("#message div:first p").each(function() {
+          var str = $(this).html();
+          var subStr = str.substring(0, 50);
+          var leftStr = str.substring(50);
+          $(this).html(subStr + (str.length > 50 ?  "<a href='javascript:void(0)' class='active'>...查看更多</a>"+"<p style='display:none'>"+leftStr+"</p>" : ''));
+        });
+
+      $('#message div:first p a').click(function(){
+        $(this).next().css('display','inline');
+        $(this).remove();
+      })
+      });
+
     </script>
   {% endblock %}

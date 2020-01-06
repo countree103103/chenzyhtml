@@ -78,12 +78,13 @@
           </li>	
 		  <li class="nav-item d-block d-lg-none">
             <a class="nav-link js-scroll-trigger" href="#" onClick="log_out()">登出账号</a>
-          </li>	
-			
+          </li>
         </ul>
       </div>
     </nav>
-    <div id="music"><audio src="music/canwedance.mp3" autobuffer autoloop loop controls autoplay></audio><!-- <i class="fa fa-play-circle-o fa-3x"></i> --></div>
+    <span id="tx"><i class="fa fa-hand-o-up"></i>  点击听听我的歌单~</span>
+    <span id="tx2">点击听听我的歌单~<i class="fa fa-hand-o-right"></i></span>
+    <div id="music"><audio src="http://old.haolingsheng.com/2014/ring/000/113/43b018ac82c0df1b17d5896bed3e97a0.mp3" autobuffer autoloop loop controls autoplay></audio></div>
     {% block main %}
     {% endblock %}
     <!-- Bootstrap core JavaScript -->
@@ -100,6 +101,14 @@
       function log_out(){
       window.location.href="logout?backurl="+window.location.pathname; 
     }
+    setInterval(function(){
+      $('#tx').animate({'top':'-=6px'},"fast");
+      $('#tx').animate({'top':'+=6px'},"fast");
+    },2000);
+    setInterval(function(){
+      $('#tx2').animate({'right':'-=6px'},"fast");
+      $('#tx2').animate({'right':'+=6px'},"fast");
+    },2000);
     </script>
 
     {% block script %}

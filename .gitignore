@@ -12,6 +12,10 @@ dist
 build
 .idea/
 __pycache__/
+static/
+!static/vendor
+!static/js
+!static/css
 
 # Vim
 *~
