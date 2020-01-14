@@ -156,3 +156,53 @@ a {
   color: #BD5D38; }
   a:hover, a:focus, a:active {
     color: #824027; }
+
+@media (max-width: 380px) {
+  nav{
+    padding: 8px 8px!important;
+  }
+  nav span p{
+    font-size: 19px;
+  }
+ /*  #tx2{
+    display:block;
+    position:fixed;
+    bottom:20px;right:235px;
+    z-index:99;
+    color: #BD5D38;
+    opacity:0.5;
+  } 苹果适配*/
+  #login_href{
+    padding: 0px;
+    margin: 0px;
+    transform:scale(0.8,0.8);
+    -webkit-transform:scale(0.8,0.8);  /*兼容-webkit-引擎浏览器*/
+    -moz-transform:scale(0.8,0.8);     /*兼容-moz-引擎浏览器*/
+  }
+}
+
+@media (max-width: 320px) {
+  nav span{
+    font-size: 16px!important;
+    margin: 0px 0px 0px 0px!important;
+  }
+  nav span p{
+    font-size: 17px;
+  }
+/*   #tx2{
+    display:block;
+    position:fixed;
+    bottom:30px;right:280px;
+    z-index:99;
+    color: #BD5D38;
+    opacity:0.5;
+  } */
+  #login_href{
+    font-size: 16px!important;
+    padding: 0px;
+    margin: 0px;
+    transform:scale(0.8,0.8);
+    -webkit-transform:scale(0.8,0.8);  /*兼容-webkit-引擎浏览器*/
+    -moz-transform:scale(0.8,0.8);     /*兼容-moz-引擎浏览器*/
+  }
+}

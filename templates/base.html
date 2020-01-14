@@ -37,13 +37,13 @@
     {% if session['user_name'] %}
 	<h4 class="fixed-top text-right" style="margin-right: 100px;padding-top: 10px">hello,{{session['user_name']}} <a onClick="log_out()" style="font-size: 18px;color: gray;text-decoration: underline" href="#">登出</a></h4>
     {% else %}
-    <h4 class="fixed-top text-right" style="margin-right: 100px;padding-top: 10px">请登录,<a onClick="log_in()" style="font-size: 18px;color: gray;text-decoration: underline" href="/login">登入</a></h4>
+    <h4 class="fixed-top text-right d-none d-lg-block" style="margin-right: 100px;padding-top: 10px">请登录,<a onClick="log_in()" style="font-size: 18px;color: gray;text-decoration: underline" href="/login">登入</a></h4>
     {% endif %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       {% if session['user_name'] %}
-        <span class="d-block d-lg-none navbar-brand">欢迎来到周瑜的博客，{{session['user_name']}}！</span>
+        <span class="d-block d-lg-none navbar-brand">欢迎来到周瑜的博客，<p style="display: inline">{{session['user_name']}}！</p></span>
         {% else %}
-        <span class="d-block d-lg-none navbar-brand">欢迎来到周瑜的博客！</span><a onClick="log_in()" style="font-size: 18px;color: white;text-decoration: underline" href="/login" class="d-block d-lg-none">点击登入</a>
+        <span class="d-block d-lg-none navbar-brand">欢迎来到周瑜的博客！</span><a onClick="log_in()" style="font-size: 18px;color: white;text-decoration: underline" href="/login" class="d-block d-lg-none" id="login_href">点击登入</a>
         {% endif %}
       <a class="navbar-brand js-scroll-trigger" href="/index.html#page-top">
         <span class="d-none d-lg-block">
@@ -51,7 +51,7 @@
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span><i class="fa fa-bars"></i></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
@@ -59,7 +59,7 @@
             <a class="nav-link js-scroll-trigger" href="#about">关于我</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#oynn">欧阳娜娜</a>
+            <a class="nav-link js-scroll-trigger" href="#oynn"><i class="fa fa-heart"></i> 欧阳娜娜</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#experience">经历</a>
@@ -101,6 +101,13 @@
     <script src="js/resume.min.js"></script>
 
     <script type="text/javascript">
+      //检测客户端设备，并保存变量
+      var u = navigator.userAgent; 
+      var ua = navigator.userAgent.toLowerCase(); 
+      var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端 
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 
+      var isWin = u.indexOf('Windows') > -1;
+      //
       function log_out(){
       window.location.href="logout?backurl="+window.location.pathname; 
     }
@@ -112,6 +119,35 @@
       $('#tx2').animate({'right':'-=6px'},"fast");
       $('#tx2').animate({'right':'+=6px'},"fast");
     },2000);
+    //根据不同设备设置相关选项
+    function animateCheck(){
+         if(ua.match(/MicroMessenger/i)=="micromessenger") { //微信内置浏览器
+          $(".download a").click(function(){
+           window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=应用名 '
+          });
+         
+         }else{
+          if(isiOS){
+            $('#tx2').css({
+             "display":"block",
+             "position":"fixed",
+             "bottom":"19px",
+             "right":"235px",
+             "z-index":"99",
+             "color": "#BD5D38",
+             "opacity":"0.5",
+           });
+          }else if(isAndroid){
+           $('section').attr('data-aos', 'flip-left');
+          }else if(isWin){
+           $('section').attr('data-aos', 'flip-left');
+          }
+          else{
+
+          }
+         }
+        } 
+        animateCheck();
     </script>
 
     {% block script %}

@@ -20,7 +20,7 @@
       </div>
     {% endif %}
     -->
-    <section data-aos="flip-left" class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
       <div class="my-auto">
         <h1 class="mb-0">陈 <span class="text-primary">周煜</span></h1>
         <div class="subheading mb-5">
@@ -65,7 +65,7 @@
         </ul>
       </div>
     </section>
-    <section data-aos="flip-left" id="oynn">
+    <section id="oynn">
       <div class="container" style="margin-top: 5rem">
         <h3 style="color: pink;font-size: 4rem" align="center">Fan of OuYanNana</h3>
         <p style="color: gray;font-size: 3rem"align="center"><i class="fa fa-heart" style="color: "></i>   Love~</p>
@@ -83,7 +83,7 @@
         </div>
       </div>
     </section>
-    <section data-aos="flip-left" class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
       <div class="my-auto">
         <h2 class="mb-5">经历 experiences</h2>
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
@@ -106,7 +106,7 @@
         
       </div>
     </section>
-    <section data-aos="flip-left" class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
       <div class="my-auto">
         <h2 class="mb-5">学历 Educations</h2>
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
@@ -128,7 +128,7 @@
         </div>
       </div>
     </section>
-    <section data-aos="flip-left" class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
       <div class="my-auto">
         <h2 class="mb-5">技能 Skills</h2>
         <div class="subheading mb-3">各种工具 &amp; </div>
@@ -175,14 +175,14 @@
         </ul>
       </div>
     </section>
-    <section data-aos="flip-left" class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
       <div class="my-auto">
         <h2 class="mb-5">兴趣 Interests</h2>
         <p>喜欢计算机，羽毛球，篮球，乒乓球，看书，当咸鱼（？）。</p>
         <p class="mb-0">特别喜欢那些有逻辑的书，夹杂幽默最好，目前在看《银河帝国》和《冰与火之歌》。</p>
       </div>
     </section>
-    <section data-aos="flip-left" class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
       <div class="my-auto">
         <h2 class="mb-5">获奖 Awards &amp; certifications </h2>
         <ul class="fa-ul mb-0">
@@ -193,7 +193,7 @@
         </ul>
       </div>
     </section>
-    <section data-aos="flip-left" class="resume-section p-3 p-lg-5 d-flex flex-column" id="message">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="message">
       <div class="d-flex flex-column">
         {% for data in lyb %}
           <h5>{{data[1]}}</h5> <time>{{data[3]}}</time>
@@ -284,11 +284,11 @@
     </script>
     <script type="text/javascript">
     AOS.init({
-  offset: 200,
-  duration: 600,
-  easing: 'ease-in-sine',
-  delay: 100
-});
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100
+    });
     </script>
     <script type="text/javascript">
       function show(){
@@ -308,6 +308,6 @@
         $(this).remove();
       })
       });
-
     </script>
+
   {% endblock %}
